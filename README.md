@@ -20,5 +20,3 @@ Pengembangan Sistem Navigasi Universal berbasis AI akan memiliki dampak positif 
 
 # Conclusion
 Sistem Navigasi Universal berbasis AI adalah inovasi penting yang akan memberikan kebebasan dan kemandirian kepada penyandang disabilitas. Dengan memungkinkan mereka untuk menemukan rute yang aman dan mudah diakses, teknologi ini membuka pintu bagi partisipasi yang lebih aktif dalam masyarakat. Melalui penggunaan metodologi dan teknik AI yang canggih, sistem ini akan menjadi alat yang sangat berharga untuk mendukung kehidupan penyandang disabilitas dengan lebih baik.
-# Artificial-Intelligence-Tasks
-"Enhancing Accessibility for People with Limited Mobility: Universal AI-Based Navigation System"
