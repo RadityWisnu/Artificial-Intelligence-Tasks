@@ -1,4 +1,5 @@
 # "Enhancing Accessibility for People with Limited Mobility: Universal AI-Based Navigation System"
+"Meningkatkan Aksesibilitas bagi Masyarakat dengan Mobilitas Terbatas: Sistem Navigasi Universal Berbasis AI"
 
 # Introduction
 Dalam era teknologi yang terus berkembang, penggunaan kecerdasan buatan (AI) untuk meningkatkan kualitas hidup penyandang disabilitas menjadi semakin relevan. Salah satu inovasi yang sangat berpotensi adalah pengembangan Sistem Navigasi Universal berbasis AI. Sistem ini dirancang khusus untuk membantu penyandang disabilitas, termasuk yang memiliki mobilitas terbatas, dalam menemukan rute yang aman dan mudah diakses dalam kehidupan sehari-hari.
