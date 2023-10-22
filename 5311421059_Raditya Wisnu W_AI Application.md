@@ -21,10 +21,6 @@ Implementasi dalam Navigasi Universal: Backpropagation dapat digunakan dalam pem
 Apa itu NLP: NLP adalah cabang kecerdasan buatan yang berfokus pada interaksi antara manusia dan komputer melalui bahasa manusia. Ini mencakup pemahaman dan generasi teks.
 Implementasi dalam Navigasi Universal: NLP dapat digunakan untuk mengubah teks menjadi suara. Dalam konteks navigasi, ini memungkinkan sistem memberikan arahan dan informasi melalui suara kepada pengguna, yang dapat sangat berguna bagi penyandang disabilitas visual.
 5. Pengenalan Lingkungan (Environment Perception): Sistem perlu memahami lingkungan sekitar dengan menggunakan sensor, termasuk kamera, lidar, atau sensor lainnya. Ini merupakan langkah penting untuk mendeteksi rintangan, jalan, dan elemen-elemen lingkungan lainnya.
-6. Visi Komputer (Computer Vision): Teknik visi komputer, seperti pengenalan objek dan pengolahan gambar, digunakan untuk memahami elemen-elemen visual dalam lingkungan. Ini mencakup pengenalan trotoar, pintu masuk, rintangan, dll.
-7. Pemrosesan Data (Data Processing): Data dari berbagai sensor dan visi komputer diproses untuk memahami konteks lingkungan dan menghasilkan informasi yang dapat digunakan untuk navigasi.
-8. Perencanaan Rute (Path Planning): Berdasarkan pemahaman lingkungan, perencanaan rute dilakukan untuk menentukan jalur yang aman dan mudah diakses untuk penyandang disabilitas.
-9. Kontrol Gerakan (Motion Control): Sistem mengontrol pergerakan perangkat (seperti kursi roda) sesuai dengan rute yang direncanakan.
 
 # Conclusion
 Sistem Navigasi Universal berbasis AI adalah inovasi penting yang akan memberikan kebebasan dan kemandirian kepada penyandang disabilitas. Dengan memungkinkan mereka untuk menemukan rute yang aman dan mudah diakses, teknologi ini membuka pintu bagi partisipasi yang lebih aktif dalam masyarakat. Melalui penggunaan metodologi dan teknik AI yang canggih, sistem ini akan menjadi alat yang sangat berharga untuk mendukung kehidupan penyandang disabilitas dengan lebih baik.
