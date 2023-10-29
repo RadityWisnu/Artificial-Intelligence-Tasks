@@ -1,3 +1,6 @@
+# Raditya Wisnu W
+# 5311421059
+
 # "Enhancing Accessibility for People with Limited Mobility: Universal AI-Based Navigation System"
 "Meningkatkan Aksesibilitas bagi Masyarakat dengan Mobilitas Terbatas: Sistem Navigasi Universal Berbasis AI"
 
