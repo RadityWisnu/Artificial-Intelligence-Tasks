@@ -542,7 +542,6 @@ Jadi urutan kunjungan adalah: `1 -> 2 -> 3 -> 4 -> 5 -> 9`. Harap diperhatikan b
 
         graph.addEdge(n6, n2);
         graph.addEdge(n6, n7);
-        graph.addEdge(n6, n3);
         
         graph.addEdge(n7, n6);
         graph.addEdge(n7, n9);
@@ -557,7 +556,7 @@ Jadi urutan kunjungan adalah: `1 -> 2 -> 3 -> 4 -> 5 -> 9`. Harap diperhatikan b
 
 Hasil Output dari Code diatas adalah:
 
-<img width="721" alt="image" src="https://github.com/RadityWisnu/Artificial-Intelligence-Tasks/assets/148683085/376004c2-6ac2-4252-9259-6636bcaa0a89">
+<img width="730" alt="image" src="https://github.com/RadityWisnu/Artificial-Intelligence-Tasks/assets/148683085/0d95bbac-60d0-4561-8688-962c3b9bc2d5">
 
 Berikut adalah langkah-langkah bagaimana algoritma BFS menemukan node C dari kode:
 
@@ -567,7 +566,7 @@ Berikut adalah langkah-langkah bagaimana algoritma BFS menemukan node C dari kod
 4. Node 'F' sekarang ditandai sebagai hitam (sudah dikunjungi), dan kita lanjut ke node berikutnya dalam antrian, yaitu node 'B'.
 5. Kunjungi semua tetangga dari node 'B' yang belum dikunjungi, yaitu node 'A'. Tambahkan ke antrian dan tandai sebagai abu-abu.
 6. Node 'B' sekarang ditandai sebagai hitam, dan kita lanjut ke node berikutnya dalam antrian, yaitu node 'G'.
-7. Kunjungi semua tetangga dari node 'G' yang belum dikunjungi, yaitu node 'I'. Tambahkan ke antrian dan tandai sebagai abu-abu.
+7. Kunjungi semua tetangga dari node 'G' yang belum dikunjungi, tidak ada dalam hal ini.
 8. Node 'G' sekarang ditandai sebagai hitam, dan kita lanjut ke node berikutnya dalam antrian, yaitu node 'C'.
 9. Kita telah menemukan node 'C'. Algoritma BFS akan berhenti jika kita mencari node tertentu dan telah menemukannya.
 
