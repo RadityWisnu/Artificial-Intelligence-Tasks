@@ -137,7 +137,6 @@ Jadi urutan kunjungan adalah: `3 -> 4 -> 5 -> 6 -> 7 -> 8`. Harap diperhatikan b
 
 # 2. Ubahlah method static void main sehingga bentuk tree seperti Gambar 4.4 dapat dibentuk. Kemudian tentukan bagaimana algoritma BFS dapat menemukan node 5.
 # Code:
-
     import java.util.ArrayDeque;
     import java.util.ArrayList;
     import java.util.HashMap;
@@ -276,7 +275,6 @@ Jadi urutan kunjungan adalah: `0 -> 1 -> 2 -> 3 -> 4 -> 5`. Harap diperhatikan b
 
 # 3. Ubahlah method static void main sehingga bentuk tree seperti Gambar 4.5 dapat dibentuk. Kemudian tentukan bagaimana algoritma BFS dapat menemukan node 9.
 # Code:
-
     import java.util.ArrayDeque;
     import java.util.ArrayList;
     import java.util.HashMap;
@@ -417,7 +415,163 @@ Hasil Output dari Code diatas adalah:
 
 <img width="749" alt="image" src="https://github.com/RadityWisnu/Artificial-Intelligence-Tasks/assets/148683085/d032e5f4-4d85-45a5-96eb-bc42166e641d">
 
+Algoritma BFS (Breadth-First Search) bekerja dengan cara berikut:
 
+1. Pertama, semua node diatur ke warna putih, jarak maksimum, dan tanpa pendahulu.
+2. Node awal (dalam hal ini `n1`) diatur ke warna abu-abu, jarak 0, dan tanpa pendahulu.
+3. Node awal ditambahkan ke antrian.
+4. Selama antrian tidak kosong, node pertama dihapus dari antrian dan semua tetangganya yang berwarna putih diatur ke warna abu-abu, jaraknya ditambah 1 dari node sebelumnya, dan pendahulunya diatur ke node sebelumnya. Kemudian mereka ditambahkan ke antrian.
+5. Node yang dikeluarkan dari antrian diatur ke warna hitam dan dicetak.
+
+Dengan demikian, urutan pencetakan node adalah urutan kunjungan BFS.
+
+Untuk menentukan bagaimana algoritma menemukan node 9, kita perlu melihat urutan kunjungan:
+
+1. Node 1 adalah titik awal.
+2. Node 2, 3, dan 4 adalah tetangga pertama dari node 1 yang dikunjungi.
+3. Karena BFS mengunjungi semua tetangga sebelum pindah ke level berikutnya, node 2, 3, dan 4 dikunjungi sebelum pindah ke node lainnya.
+4. Node 5 adalah tetangga dari node 2 dan dikunjungi setelah semua tetangga dari node 1 telah dikunjungi.
+5. Akhirnya, node 9 adalah tetangga dari node 5 dan dikunjungi setelah semua tetangga dari node 2 telah dikunjungi.
+
+Jadi urutan kunjungan adalah: `1 -> 2 -> 3 -> 4 -> 5 -> 9`. Harap diperhatikan bahwa urutan kunjungan antara node pada level yang sama (misalnya antara node 3 dan 4) dapat bervariasi tergantung pada implementasi.
+
+# 4. Ubahlah kode program di atas sehingga bentuk tree seperti Gambar 6 dapat dibentuk. Kemudian tentukan bagaimana algoritma BFS dapat menemukan node C.
+# Code:
+    import java.util.ArrayDeque;
+    import java.util.ArrayList;
+    import java.util.HashMap;
+    import java.util.List;
+    import java.util.Map;
+    import java.util.Queue;
+    import java.util.Set;
+
+    public class NewMain {
+    public enum NodeColour { WHITE, GRAY, BLACK }
+
+    public static class Node {
+        char data;
+        int distance;
+        Node predecessor;
+        NodeColour colour;
+
+        public Node(char data) {
+            this.data = data;
+        }
+
+        public String toString() {
+            return "(" + data + ", d=" + distance + ")";
+        }
+    }
+
+    Map<Node, List<Node>> nodes;
+
+    public NewMain() {
+        nodes = new HashMap<Node, List<Node>>();
+    }
+
+    public void addEdge(Node n1, Node n2) {
+        if (nodes.containsKey(n1)) {
+            nodes.get(n1).add(n2);
+        } else {
+            ArrayList<Node> list = new ArrayList<Node>();
+            list.add(n2);
+            nodes.put(n1, list);
+        }
+    }
+
+    public void bfs(Node s) {
+        Set<Node> keys = nodes.keySet();
+        for (Node u : keys) {
+            if (u != s) {
+                u.colour = NodeColour.WHITE;
+                u.distance = Integer.MAX_VALUE;
+                u.predecessor = null;
+            }
+        }
+        s.colour = NodeColour.GRAY;
+        s.distance = 0;
+        s.predecessor = null;
+        Queue<Node> q = new ArrayDeque<Node>();
+        q.add(s);
+        while (!q.isEmpty()) {
+            Node u = q.poll();
+            List<Node> adj_u = nodes.get(u);
+            if (adj_u != null) {
+                for (Node v : adj_u) {
+                    if (v.colour == NodeColour.WHITE) {
+                        v.colour = NodeColour.GRAY;
+                        v.distance = u.distance + 1;
+                        v.predecessor = u;
+                        q.add(v);
+                    }
+                }
+            }
+            u.colour = NodeColour.BLACK;
+            System.out.print(u + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        NewMain graph = new NewMain();
+        Node n1 = new Node('A');
+        Node n2 = new Node('B');
+        Node n3 = new Node('C');
+        Node n4 = new Node('D');
+        Node n5 = new Node('E');
+        Node n6 = new Node('F');
+        Node n7 = new Node('G');
+        Node n8 = new Node('H');
+        Node n9 = new Node('I');
+
+        graph.addEdge(n1, n2);
+        graph.addEdge(n1, n4);
+
+        graph.addEdge(n2, n6);
+        graph.addEdge(n2, n1);
+        graph.addEdge(n2, n4);
+
+        graph.addEdge(n3, n4);
+        graph.addEdge(n3, n5);
+
+        graph.addEdge(n4, n2);
+        graph.addEdge(n4, n3);
+        graph.addEdge(n4, n5);
+
+        graph.addEdge(n5, n4);
+        graph.addEdge(n5, n3);
+
+        graph.addEdge(n6, n2);
+        graph.addEdge(n6, n7);
+        graph.addEdge(n6, n3);
+        
+        graph.addEdge(n7, n6);
+        graph.addEdge(n7, n9);
+
+        graph.addEdge(n8, n9);
+        
+        graph.addEdge(n9, n8);
+
+        graph.bfs(n6);
+    }
+    }
+
+Hasil Output dari Code diatas adalah:
+
+<img width="721" alt="image" src="https://github.com/RadityWisnu/Artificial-Intelligence-Tasks/assets/148683085/376004c2-6ac2-4252-9259-6636bcaa0a89">
+
+Berikut adalah langkah-langkah bagaimana algoritma BFS menemukan node C dari kode:
+
+1. Mulai dari node 'F' (karena `graph.bfs(n6);` di mana n6 adalah node 'F').
+2. Tambahkan node 'F' ke dalam antrian dan tandai sebagai abu-abu (sedang dikunjungi).
+3. Kunjungi semua tetangga dari node 'F', yaitu node 'B', 'G', dan 'C', tambahkan ke antrian dan tandai sebagai abu-abu.
+4. Node 'F' sekarang ditandai sebagai hitam (sudah dikunjungi), dan kita lanjut ke node berikutnya dalam antrian, yaitu node 'B'.
+5. Kunjungi semua tetangga dari node 'B' yang belum dikunjungi, yaitu node 'A'. Tambahkan ke antrian dan tandai sebagai abu-abu.
+6. Node 'B' sekarang ditandai sebagai hitam, dan kita lanjut ke node berikutnya dalam antrian, yaitu node 'G'.
+7. Kunjungi semua tetangga dari node 'G' yang belum dikunjungi, yaitu node 'I'. Tambahkan ke antrian dan tandai sebagai abu-abu.
+8. Node 'G' sekarang ditandai sebagai hitam, dan kita lanjut ke node berikutnya dalam antrian, yaitu node 'C'.
+9. Kita telah menemukan node 'C'. Algoritma BFS akan berhenti jika kita mencari node tertentu dan telah menemukannya.
+
+Dengan demikian, algoritma BFS dapat menemukan node 'C' dari kode program dengan cara di atas.
 
 
 
